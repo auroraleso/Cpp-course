@@ -9,7 +9,7 @@ double particleInvMass(double px, double py, double pz, double energy);
 double mass (const Event& e)
 {
     
-    int pos=0,neg=0;
+    
     float sumpx=0,sumpy=0,sumpz=0;
     float sumEK0=0, sumELambda0=0;
     float massK0, massLambda0;
@@ -45,7 +45,7 @@ double mass (const Event& e)
         massK0=particleInvMass(sumpx,sumpy,sumpz,sumEK0);
         massLambda0=particleInvMass(sumpx,sumpy,sumpz,sumELambda0);
     }
-    if (abs(massK0-0.497611)< abs(massLambda0-1.115683))
+    if (fabs(massK0-0.497611)< fabs(massLambda0-1.115683))
     return massK0;
     else
     return massLambda0;
