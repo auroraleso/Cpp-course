@@ -1,0 +1,22 @@
+ c++ -Wall -I. `root-config --cflags` -o main *cc *h `root-config --libs`
+
+If you want to use .txt for data about mass ranges and fitters
+
+./main sim 1000 MassPlot namehistoMass.root TimePlot namehistoTime.root ranges set fitters set 
+or
+./main input particle_events.txt MassPlot namehistoMass.root TimePlot namehistoTime.root ranges set fitters set
+
+
+If you want to manually set data about mass ranges and fitters
+
+./main sim 1000 MassPlot namehistoMass.root TimePlot namehistoTime.root ranges set fitters set
+
+or
+./main input particle_events.txt MassPlot namehistoMass.root TimePlot namehistoTime.root ranges set fitters set
+
+typical output 
+
+you should find in your directory two histograms named
+mass_namehistoMass.root with histogram of masses
+time_namehistoTime.root with histogram of decay times
+

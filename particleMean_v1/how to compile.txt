@@ -1,0 +1,7 @@
+ c++ -Wall -I. `root-config --cflags` -o main *cc *h `root-config --libs`
+./main
+
+typical output 
+Write file name
+input: particle_events.txt
+mean= 0.497626 rms= 0.000230318

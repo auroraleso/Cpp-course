@@ -1,0 +1,6 @@
+ c++ -Wall -o main *cpp 
+./main
+
+typical output
+asks for input file
+prints data written in the given file

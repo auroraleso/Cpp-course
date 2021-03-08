@@ -1,0 +1,13 @@
+ c++ -Wall -I. `root-config --cflags` -o main *cc *h `root-config --libs`
+
+./main sim 1000 MassPlot namehisto.root
+or
+./main input particle_events.txt MassPlot namehisto.root
+
+
+typical output (values of number of events, mean and rms)
+470
+0.497614 0.000212889
+302
+1.11568 2.86538e-05
+

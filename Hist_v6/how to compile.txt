@@ -1,0 +1,9 @@
+export LD_LIBRARY_PATH=.
+./compile
+
+then 
+./runDump sim 100 dump
+./runPlot sim 10 MassPlot ranges massRanges.txt TimePlot fitters particleFitters.txt
+
+MassPlot is keyword for printing a mass plot
+TimePlot is keyword for printing a time plot
