@@ -2,6 +2,7 @@
 #include "Event.h"
 #include <math.h>
 #include "ParticleReco.h"
+#include<iostream>
 double mass( const Event& ev);
 
 LifeTimeFit::LifeTimeFit( double min, double max ):
@@ -25,8 +26,7 @@ bool LifeTimeFit::add( const Event& e ) {
 	static ParticleReco* mass= ParticleReco::instance();
 	float invMass=mass->mass();
     // check if accepted
-	if( ( invMass < 0) ) return false;
-  //|| ( invMass > ( max -min ) )
+	if( invMass < 0) return false;
     // update counter
 	acceptedev++;
 	return true;
