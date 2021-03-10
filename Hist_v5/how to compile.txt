@@ -2,9 +2,11 @@
 
 If you want to use .txt for data about mass ranges and fitters
 
-./main sim 1000 MassPlot namehistoMass.root TimePlot namehistoTime.root ranges set fitters set 
+./main sim 1000 MassPlot namehistoMass.root TimePlot namehistoTime.root ranges 
+ranges.txt fitters fitters.txt
 or
-./main input particle_events.txt MassPlot namehistoMass.root TimePlot namehistoTime.root ranges set fitters set
+./main input particle_events.txt MassPlot namehistoMass.root TimePlot namehistoTime.root 
+ranges ranges.txt fitters fitters.txt
 
 
 If you want to manually set data about mass ranges and fitters

@@ -59,6 +59,8 @@ void ParticleMass::pCreate( const string& nome, float min, float max ) {
 	string nome;
 	double min, max;
 	const string settings=aInfo->value( "fitters" );
+	/*Added a piece of code to allow user to set its own parameters. Quite long, 
+	but it could be a useful option for those who do not have any file with data for max, min ecc.*/
 	if (settings=="set")
 	{
 		//for K0
@@ -83,12 +85,16 @@ void ParticleMass::pCreate( const string& nome, float min, float max ) {
 		 return;
 
 	}
+	//otherwise, takes the .txt file 
 	ifstream file( aInfo->value( "ranges" ).c_str() );
 	//set values reading from file 
     while ( file >> nome >> min >> max ) 
     	//store them
     pCreate( nome, min, max);
+	
 	return;
+
+	
  }
  void ParticleMass::endJob()
  {
@@ -105,8 +111,7 @@ void ParticleMass::pCreate( const string& nome, float min, float max ) {
 			MassMean*  mean = p->mean;
 			TH1F*      h = p->h;
 		mean->compute();
-		//cout << mean->nEvents() << endl;
-		//cout << mean->Mmean()   << ' ' << mean->mRMS () << endl;
+
 	h->Write();
 	
 		}
