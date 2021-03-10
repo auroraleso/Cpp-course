@@ -15,11 +15,10 @@ using namespace std;
 int main( int argc, char* argv[] ) {
 // store command line parameters
   AnalysisInfo* info = new AnalysisInfo( argc, argv );
-cout<<info->argList()[0];
   // create data source
   EventSource* es = SourceFactory::create( info );
 
-  // create a list of analyzers
+  // create a list of analyzers using AnalysisFactory
   vector<AnalysisSteering*> aList = AnalysisFactory::create( info );
 
   // initialize all analyzers

@@ -9,10 +9,10 @@ double mass( const Event& e) {
   double loopPx, loopPy, loopPz;
   int pos=0,neg=0;
   Event::pointpart loopPointer;
-    // storing energy sums
+    // energy sums
   double EK0 = 0, ELambda0 = 0;
   
-  // storing inv masses
+  //  inv masses
   double invK0 = 0, invLambda0 = 0;
 
   for ( int i = 0; i < e.nParticles(); ++i ) {
@@ -39,25 +39,21 @@ double mass( const Event& e) {
 		neg++;
 	}
   }
-  // check for hypotesis satisfied (one neg and one pos), 
-  //if not return negative value
+  /* check for hypotesis satisfied (one neg and one pos), 
+  if not return negative value*/
   if( ( pos != 1 ) || ( neg !=1 ) ) return -1;
 
-  // invariant masses for different decay product mass hypotheses
+  // get results for invariant masses in both cases
   invK0      = Utilities::invMass( sumpx, sumpy, sumpz,
 						               EK0 );
   invLambda0 = Utilities::invMass( sumpx, sumpy, sumpz,
 						               ELambda0 );
 						
 
-  // compare invariant masses obtained, return the one which is closer to the
-  //known value
+  /*compare invariant masses obtained, return the one which is closer to the
+  known value*/
   double differenceK0 = fabs(Constants::massK0 - invK0);
-
- // differenceK0 =  (differenceK0 > 0 ) ? differenceK0 : -differenceK0;
-  
   double differenceLambda0 = fabs(Constants::massLambda0 - invLambda0);
-  //differenceLambda0 =  (differenceLambda0 > 0 ) ? differenceLambda0 : -differenceLambda0;
   
   if( differenceK0 > differenceLambda0 ) return invLambda0;
   return invK0;
