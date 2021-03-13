@@ -14,20 +14,20 @@
 using namespace std;
 
 
-// concrete factory to create an ElementReco analyzer
+// concrete factory to create a ParticleMass analyzer
 class ParticlemassFactory: public AnalysisFactory::AbsFactory {
  public:
-  // assign "plot" as name for this analyzer and factory
+  // assign "MassPlot" as name for this analyzer and factory
   ParticlemassFactory(): AnalysisFactory::AbsFactory( "MassPlot" ) {}
-  // create an ElementReco when builder is run
+  // create a ParticleMass when builder is run
   AnalysisSteering* create( const AnalysisInfo* info ) override {
     return new ParticleMass( info );
   }
 };
-// create a global ElementRecoFactory, so that it is created and registered 
+// create a global ParticlemassFactory, so that it is created and registered 
 // before main execution start:
 // when the AnalysisFactory::create function is run,
-// an ElementRecoFactory will be available with name "plot".
+// an ParticlemassFactory will be available with name "MassPlot".
 static ParticlemassFactory pm;
 double mass( const Event& e);
 
@@ -46,6 +46,7 @@ void ParticleMass::pCreate( const string& nome, float min, float max ) {
   // create TH1F and statistic objects and store their pointers
   Particle* part = new Particle;
   part->nome=name;
+  //part-> nome =strcat("mass",name);
   part->mean = new MassMean( min, max );
   part->h = new TH1F(name, name, 200, min-(max-min)*0.01, max+(max-min)*0.01 );
   pList.push_back( part );
@@ -53,12 +54,14 @@ void ParticleMass::pCreate( const string& nome, float min, float max ) {
   return;
 
 }
-void ParticleMass::beginJob()
+ void ParticleMass::beginJob()
  {
 	pList.reserve(2);
 	string nome;
 	double min, max;
 	const string settings=aInfo->value( "fitters" );
+	/*Added a piece of code to allow user to set its own parameters. Quite long, 
+	but it could be a useful option for those who do not have any file with data for max, min ecc.*/
 	if (settings=="set")
 	{
 		//for K0
@@ -83,19 +86,24 @@ void ParticleMass::beginJob()
 		 return;
 
 	}
+	//otherwise, takes the .txt file 
 	ifstream file( aInfo->value( "ranges" ).c_str() );
 	//set values reading from file 
     while ( file >> nome >> min >> max ) 
     	//store them
     pCreate( nome, min, max);
+	
 	return;
+
+	
  }
  void ParticleMass::endJob()
  {
+	
 	 TDirectory* currentDir = gDirectory;
 	 	// open histogram file
 		const string nomeroot1= "mass_";
-		const string nomeroot2=aInfo->value( "plot" );
+		const string nomeroot2=aInfo->value( "MassPlot" );
 		const string nomeroot=nomeroot1+nomeroot2;
 		const char* name=nomeroot.c_str();
 	 TFile* file = new TFile( name , "RECREATE" );
@@ -104,8 +112,7 @@ void ParticleMass::beginJob()
 			MassMean*  mean = p->mean;
 			TH1F*      h = p->h;
 		mean->compute();
-		//cout << mean->nEvents() << endl;
-		//cout << mean->Mmean()   << ' ' << mean->mRMS () << endl;
+
 	h->Write();
 	
 		}

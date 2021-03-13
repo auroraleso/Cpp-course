@@ -31,8 +31,7 @@ unsigned int LifeTimeFit::nEvents() const
 bool LifeTimeFit::add( const Event& e ) {
 	static ParticleReco* mass= ParticleReco::instance();
 	float invMass=mass->mass();
-	if( ( invMass < 0) ) return false;
-  //|| ( invMass > ( max -min ) )
+	if( ( invMass < min ) || invMass> max ) return false;
 
 	static ProperTime* t=ProperTime::instance();
 	 double dTime= t->DecayTime();

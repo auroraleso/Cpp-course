@@ -13,20 +13,20 @@
 using namespace std;
 
 
-// concrete factory to create an ElementReco analyzer
+// concrete factory to create an ParticleLifeTime analyzer
 class ParticleLifeTimeFactory: public AnalysisFactory::AbsFactory {
  public:
-  // assign "plot1" as name for this analyzer and factory
+  // assign "TimePlot" as name for this analyzer and factory
   ParticleLifeTimeFactory(): AnalysisFactory::AbsFactory( "TimePlot" ) {}
-  // create an ElementReco when builder is run
+  // create a ParticleLifeTime when builder is run
   AnalysisSteering* create( const AnalysisInfo* info ) override {
     return new ParticleLifeTime( info );
   }
 };
-// create a global ElementRecoFactory, so that it is created and registered 
+// create a global ParticleLifeTimeFactory, so that it is created and registered 
 // before main execution start:
 // when the AnalysisFactory::create function is run,
-// an ElementRecoFactory will be available with name "plot1".
+// a ParticleLifeTimeFactory will be available with name "TimePlot".
 static ParticleLifeTimeFactory pl;
 double mass( const Event& e);
 ParticleLifeTime::ParticleLifeTime( const AnalysisInfo* info ):
@@ -51,7 +51,7 @@ void ParticleLifeTime::pCreate( const string& nome, float min, float max, float 
   return;
 
 }
-void ParticleLifeTime::beginJob()
+ void ParticleLifeTime::beginJob()
  {
 	pList.reserve(2);
 	string nome;
@@ -114,16 +114,14 @@ void ParticleLifeTime::beginJob()
 	 TDirectory* currentDir = gDirectory;
 	 	// open histogram file
 		const string nomeroot1= "time_";
-		const string nomeroot2=aInfo->value( "plot1" );
+		const string nomeroot2=aInfo->value( "TimePlot" );
 		const string nomeroot=nomeroot1+nomeroot2;
 		
 		const char* name=nomeroot.c_str();
 	
 	 TFile* file = new TFile( name , "RECREATE" );
 
-//aInfo->value( "plot1" ).c_str()
         for ( Particle* p: pList ) {
-			//LifeTimeFit*  mean = p->mean;
 			TH1F*      h = p->h;
 			LifeTimeFit* t= p->mean;
 			t->compute();
