@@ -26,7 +26,7 @@ bool LifeTimeFit::add( const Event& e ) {
 	static ParticleReco* mass= ParticleReco::instance();
 	float invMass=mass->mass();
     // check if accepted
-	if( invMass < 0) return false;
+	if( invMass<min || invMass >max) return false;
     // update counter
 	acceptedev++;
 	return true;
