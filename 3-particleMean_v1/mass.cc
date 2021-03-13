@@ -13,6 +13,7 @@ double mass (const Event& e)
     float sumpx=0,sumpy=0,sumpz=0;
     float sumEK0=0, sumELambda0=0;
     float massK0, massLambda0;
+    int pos=0,neg=0;
     typedef const struct Particle* part ; 
     part p; 
     double m;
