@@ -1,0 +1,19 @@
+Shape.h,cc       : common interface for geometric shapes
+Triangle.h,cc
+Square.h,cc
+Rectangle.h,cc   : C++11 : geometric shapes with overriding functions
+testShapePtr.cc  : shape access by pointer
+testShapeRef.cc  : shape access by reference
+testShapeVal.cc  : shape access by value
+testShapeFun.cc  : shape access by a function
+
+to compile:
+
+c++ -Wall -o testShapePtr testShapePtr.cc \
+             Shape.cc Triangle.cc Rectangle.cc Square.cc -std=c++11
+c++ -Wall -o testShapeRef testShapeRef.cc \
+             Shape.cc Triangle.cc Rectangle.cc Square.cc -std=c++11
+c++ -Wall -o testShapeVal testShapeVal.cc \
+             Shape.cc Triangle.cc Rectangle.cc Square.cc -std=c++11
+c++ -Wall -o testShapeFun testShapeFun.cc \
+             Shape.cc Triangle.cc Rectangle.cc Square.cc -std=c++11

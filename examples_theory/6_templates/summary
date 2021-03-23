@@ -1,0 +1,5 @@
+tfunc  :  template function
+array  :  template class
+tnest  :  template nested class
+ntarg  :  non-type arguments
+tensor :  multi-dimensional arrays (difficult)

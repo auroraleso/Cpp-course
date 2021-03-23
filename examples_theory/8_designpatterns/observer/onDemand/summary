@@ -1,0 +1,15 @@
+Dispatcher.h,hpp        :  a template dispatcher
+ActiveObserver.h,hpp    :  a template observer updating at each event
+SimpleObserver.h,hpp    :  a template observer updating on demand
+IntMultiplier.h,cc      :  an observer multiplying int numbers and
+                           checking if they're prime
+CheckPrime.h,cc         :  an observer checking if an int number is prime
+IntAnalyzer.h,cc        :  an observer printing the results from
+                           IntMultiplier
+obsCreate.cc            :  a chunk of code creating an IntAnalyzer
+observerTest.cc         :  a test program sending 100 int numbers
+
+
+to compile:
+c++ -Wall -o observerTest observerTest.cc \
+  IntAnalyzer.cc obsCreate.cc IntMultiplier.cc CheckPrime.cc

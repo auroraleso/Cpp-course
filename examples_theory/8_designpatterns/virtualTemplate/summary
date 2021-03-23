@@ -1,0 +1,19 @@
+Writer.h        :  generic interface to write text or binary files in a
+                   transparent way
+Reader.h        :  generic interface to read text or binary files in a
+                   transparent way
+
+testWrite.cc    :  main function to test the writer
+testRead.cc     :  main function to test the reader
+
+to compile:
+
+c++ -Wall -o testWrite testWrite.cc
+c++ -Wall -o testRead  testRead.cc
+
+to run
+testWrite file.txt t
+testWrite file.dat b
+testRead in.txt t
+testRead file.dat b
+

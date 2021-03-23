@@ -1,0 +1,15 @@
+BaseA.h
+BaseA.cc
+BaseB.h
+BaseB.cc    :  two very simple classes with functions
+               printing the object location in memory
+Derived.h
+Derived.cc  :  a class derived from BaseA and BaseB
+
+multipleInheritance.cc : create the classes, call the function and 
+                         print the pointers
+
+to compile:
+c++ -Wall -o multipleInheritance multipleInheritance.cc \
+             BaseA.cc BaseB.cc Derived.cc
+

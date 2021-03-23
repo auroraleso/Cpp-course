@@ -1,0 +1,49 @@
+WrongS.h
+WrongS.cc
+WrongT.h
+WrongT.cc
+w.cc
+testWrong.cc
+testWrong2.cc    :  a (wrong) singleton object
+                    dependent on initialization order
+
+ObjS.h
+ObjS.cc
+g.cc
+testObject.cc    :  a simple singleton object (not yet completely safe)
+
+ObjP.h
+ObjP.cc
+h.cc
+testSafe.cc      :  a safe singleton object (not destructed at execution end)
+
+Pippo.h
+Pippo.cc
+Pluto.h
+Pluto.cc
+testFiasco.cc   :  two trivial classes leading to error due to static object
+                    (tested with gcc 4.4.1) 
+
+Singleton.h
+Singleton.hpp    :  a template for singleton objects
+ObjT.h
+ObjT.cc
+t.cc
+testTemplate.cc  :  a simple singleton object based on a template
+
+Base.h
+Base.cc          :  a singleton usable as a base, allowing replacement 
+                    by derived objects
+Derived.h
+Derived.cc       :  a singleton replacing Base 
+
+to compile:
+c++ -Wall -o testWrong    testWrong.cc    w.cc WrongS.cc
+c++ -Wall -o testWrong2   testWrong2.cc   WrongS.cc WrongT.cc
+c++ -Wall -o testObject   testObject.cc   g.cc ObjS.cc
+c++ -Wall -o testSafe     testSafe.cc     h.cc ObjP.cc
+c++ -Wall -o testFiasco1  testFiasco.cc   Pluto.cc Pippo.cc
+c++ -Wall -o testFiasco2  testFiasco.cc   Pippo.cc Pluto.cc
+c++ -Wall -o testTemplate testTemplate.cc t.cc ObjT.cc
+c++ -Wall -o testBase     testFunc.cc     Base.cc
+c++ -Wall -o testDerived  testFunc.cc     Base.cc Derived.cc

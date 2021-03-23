@@ -1,0 +1,13 @@
+FloatArray.h
+FloatArray.cc  :  a simple array of float
+
+testPerm.cc : test a function to permutate objects of any type
+testMult.cc : C++11: test a function to multiply objects of any type
+testVart.cc : C++11: test a function with variable number of parameters
+
+to compile
+
+c++ -Wall -o testPerm testPerm.cc FloatArray.cc
+c++ -Wall -o testMult testMult.cc FloatArray.cc -std=c++11
+c++ -Wall -o testVart testVart.cc -std=c++11
+c++ -Wall -o testFold testFold.cc -std=c++17

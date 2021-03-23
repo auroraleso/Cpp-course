@@ -1,0 +1,48 @@
+
+The "double dispatch" technique can be used, sometimes, to mimic the
+behaviour of a "template virtual" function, or operator. Template
+functions cannot be virtual, so some workaround is needed to obtain a
+similar behaviour.
+An example is a "Reader" base class, having an operator ">>" as
+std::istream, and having two subclasses "TxtReader" and "BinReader"
+overriding that operator to perform a read in text or binary format
+respectively. Such an operator must be templated, to allow reading data
+with different types; all the same it should be virtual, to allow a
+transparent usage of a reference to a base "Reader" class object to read
+data in text or binary format without the need to know the exact type of
+the concrete object used.
+As said before a templated function, or an operator, cannot be virtual;
+the template "operator>>" must then forward it's argument to a
+non-template virtual function "read", so that "read" can be overridden 
+by derived class to perform actual data reading in text or binary format.
+This function, as said, cannot be template, so the only way to pass
+arguments to it while preserving their type is making it's argument a
+reference to a base type, and then pass a reference to an object of
+derived type with some relation to the type of the argument passed to
+the "operator>>". The purpose of this derived type is giving access to
+a generic object, i.e. the argument passed to "operator>>" having generic
+type "T", through a common interface, and can be named "Wrapper<T>"; the
+common interface can be named "BaseWrapper".
+To summarize, the "operator>>" in class "Reader" is templated, it takes
+an argument with generic type "T" and it uses it to create a "Wrapper<T>"
+object, inheriting from "BaseWrapper", then passes it to the virtual
+function "read" that takes as argument a reference to "BaseWrapper".
+The virtual function "read" is overridden by "TxtReader" and "BinReader",
+to perform actual data reading in text or binary format. This operation
+cannot be done directly in this "read" function because "read" has only
+a reference to "BaseWrapper" as argument, and does not know the exact
+type.
+To solve this problem the virtual "read" function in "Reader" class does
+call another virtual "read" function in "BaseWrapper", giving "this" as
+argument. This second virtual "read" function comes in two forms, possibly
+with different names "readT" an "readB" and/or different arguments being
+pointer to "TxtReader" or "BinReader", is pure virtual in the base class
+"BaseWrapper" and is overridden by derived classes "Wrapper<T>".
+This last function has everything it needs to perform the actual reading:
+it's overridden in "Wrapper<T>", so it knows the actual type "T", and
+it comes in two forms for text or binary data.
+In the whole process two virtual functions have been called, the "read"
+function in "Reader" class and the "readT/readB" function in "Wrapper<T>",
+and the second one receives as argument the pointer to the object used
+in the call to the first one: this is another example of a "double dispatch"
+pattern.

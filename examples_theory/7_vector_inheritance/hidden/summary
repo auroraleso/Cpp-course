@@ -1,0 +1,17 @@
+Vector2D.h 
+Vector2D.cc           :  a 2D vector with sum and multiplication by a number
+                         plus a transformation with 2 different factors
+Vector3D.h
+Vector3D.cc           :  a 3D vector as a 2D vector plus a z coordinate
+                         plus a transformation with 3 different factors
+Vector3D.h
+Vector3D.cc           :  C++11 : a 3D vector as a 2D vector plus a z coordinate
+                         plus a transformation with 3 different factors,
+                         2-D transformation recovered
+testVector3D.cc       :  create, transform and print a 3D vector
+testVector3D11.cc     :  C++11 : create, transform and print a 3D vector
+
+to compile:
+c++ -Wall -o testVector3D testVector3D.cc Vector2D.cc Vector3D.cc
+c++ -Wall -o testVector3D11 testVector3D11.cc \
+                            Vector2D.cc Vector3D11.cc -std=c++11

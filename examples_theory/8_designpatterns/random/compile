@@ -1,0 +1,5 @@
+rm -f random1
+rm -f random2
+c++ -Wall -fPIC -I include -o random1 main.cc Random.cc
+c++ -Wall -fPIC -I include -o random2 main.cc Random.cc -L. -Wl,--no-as-needed -lrootRandom
+

@@ -1,0 +1,10 @@
+(alternative code)
+
+RecursiveTree.h,hpp  :  recursive tree of associations key/content
+testTree.cc          :  main function to test the tree
+                        by counting the number of occurrences of
+                        characters in a file
+
+to compile:
+
+c++ -Wall -o testTree testTree.cc

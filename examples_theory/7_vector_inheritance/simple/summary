@@ -1,0 +1,10 @@
+Vector2D.h
+Vector2D.cc           :  a 2D vector with sum and multiplication by a number
+Vector3D.h
+Vector3D.cc           :  a 3D vector as a 2D vector plus a z coordinate
+testVector3D.cc       :  create and print a 3D vector
+testVector3DPrint.cc  :  add a function to print the modulus
+
+to compile:
+c++ -Wall -o testVector3D      testVector3D.cc      Vector2D.cc Vector3D.cc
+c++ -Wall -o testVector3DPrint testVector3DPrint.cc Vector2D.cc Vector3D.cc

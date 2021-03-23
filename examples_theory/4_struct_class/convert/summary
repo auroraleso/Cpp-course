@@ -1,0 +1,18 @@
+A.h
+A.cc
+B.h
+B.cc
+testConv.cc  :  implicit or explicit type conversion with constructors
+
+Pippo.h
+Pippo.cc
+testOper.cc  :  implicit type conversion with operator
+
+Pluto.h
+Pluto.cc
+testExpc.cc  :  C++11: explicit type conversion with operator
+
+to compile:
+c++ -o testConv testConv.cc A.cc B.cc
+c++ -o testOper testOper.cc Pippo.cc
+c++ -o testExpc testExpc.cc Pluto.cc -std=c++11

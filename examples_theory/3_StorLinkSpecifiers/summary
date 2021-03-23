@@ -1,0 +1,36 @@
+testStaticBlock.cc  :  static variable declared inside a block
+testStaticFunc.cc   :  static variable declared inside a function
+
+testStaticInt.cc    :  static variable declared outside all functions,
+                       with internal linkage
+
+testStaticExt.cc
+gFunc.cc            :  static variable declared outside all functions,
+                       with external linkage
+
+To compile
+
+c++ -Wall -o testStaticBlock testStaticBlock.cc
+c++ -Wall -o testStaticFunc  testStaticFunc.cc
+c++ -Wall -o testStaticInt   testStaticInt.cc
+c++ -Wall -o testStaticExt   testStaticExt.cc gFunc.cc
+
+alternatively, to compile one file at once:
+c++ -Wall -c testStaticExt.cc
+c++ -Wall -c gFunc.cc
+c++ -Wall -o testStaticExt2  testStaticExt.o gFunc.o
+
+alternatively, to compile using a static library:
+c++ -Wall -c gFunc.cc
+ar -r libgFuncS.a gFunc.o
+c++ -Wall -o testStaticExtS  testStaticExt.cc -L. -lgFuncS
+
+alternatively, to compile using a dynamic library:
+c++ -Wall -fPIC -shared -o libgFuncD.so gFunc.cc
+c++ -Wall -fPIC -o testStaticExtD testStaticExt.cc -L. -lgFuncD
+
+alternatively, to compile using only dynamic libraries:
+c++ -Wall -fPIC -shared -o libTest.so   testStaticExt.cc
+c++ -Wall -fPIC -shared -o libgFuncD.so gFunc.cc
+c++ -Wall -fPIC -o testStaticExtA dummy.cc -L. -lTest -lgFuncD
+

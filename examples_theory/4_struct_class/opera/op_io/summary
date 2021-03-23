@@ -1,0 +1,9 @@
+Vector2D.h
+Vector2D.cc
+testVector2D.cc  :  write a 2D vector
+readVector2D.cc  :  read  a 2D vector
+
+to compile:
+c++ -Wall -o testVector2D testVector2D.cc Vector2D.cc
+c++ -Wall -o readVector2D readVector2D.cc Vector2D.cc
+

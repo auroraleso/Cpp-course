@@ -1,0 +1,8 @@
+testSelect.cc   :  conditional compilation
+testMacro.cc    :  simple preprocessor macros
+absPitFall.cc   :  pitfall with macro computing abs value
+
+to compile:
+c++ -Wall -o testMacro   testMacro.cc
+c++ -Wall -o testSelect  testSelect.cc
+c++ -Wall -o absPitFall  absPitFall.cc

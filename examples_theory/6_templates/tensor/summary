@@ -1,0 +1,8 @@
+Array.h
+Array.hpp  :  a simple array template
+Tensor.h   :  a template multi-dimensional array
+
+testTensor.cc  : create, fill and print the multi-dimensional array
+
+to compile:
+c++ -Wall -o testTensor testTensor.cc

@@ -1,0 +1,4 @@
+testFunct.cc  :  test a function operator
+
+to compile:
+c++ -Wall -o testFunct testFunct.cc

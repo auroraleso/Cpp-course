@@ -1,0 +1,14 @@
+singleton       :  singleton example
+random          :  example to automatically replace built-in C random
+                   generator with ROOT random generator by simply loading
+                   an additional library
+factory         :  object factory example
+prototype       :  prototype example, allowing creation of new prototypes
+                   at runtime
+proxy           :  proxy example
+observer        :  observer examples, including modified version with
+                   lazy evaluation
+visitor         :  visitor example, with operations on geometrical shapes
+iterator        :  iterator examples with linked list and recursive tree
+virtualTemplate :  application of "double dispatch" to mimic
+                   template virtual functions

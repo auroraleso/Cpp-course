@@ -1,0 +1,19 @@
+Shape.h,cc
+Triangle.h,cc
+Square.h,cc
+Rectangle.h,cc   : geometric shapes with a common interface
+testShapePtr.cc  : shape access by pointer
+testShapeRef.cc  : shape access by reference
+testShapeVal.cc  : shape access by value
+testShapeFun.cc  : shape access by a function
+
+to compile:
+
+c++ -Wall -o testShapePtr testShapePtr.cc \
+             Shape.cc Triangle.cc Rectangle.cc Square.cc
+c++ -Wall -o testShapeRef testShapeRef.cc \
+             Shape.cc Triangle.cc Rectangle.cc Square.cc
+c++ -Wall -o testShapeVal testShapeVal.cc \
+             Shape.cc Triangle.cc Rectangle.cc Square.cc
+c++ -Wall -o testShapeFun testShapeFun.cc \
+             Shape.cc Triangle.cc Rectangle.cc Square.cc

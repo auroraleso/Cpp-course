@@ -1,0 +1,16 @@
+pvfunc.cc  :  sort a std::vector of Vector2D according to vector mod.
+pvfobj.cc  :  sort a std::vector of Vector2D using a function object
+lambda.cc  :  C++11: sort a vector using a "lambda function"
+stdfun.cc  :  C++11: sort a vector using a "std::function"
+vbound.cc  :  binary search over a vector<int>
+pbound.cc  :  binary search over an array of int
+
+to compile:
+
+c++ -Wall -o pvsort pvsort.cc
+c++ -Wall -o pvfunc pvfunc.cc Vector2D.cc
+c++ -Wall -o pvfobj pvfobj.cc Vector2D.cc
+c++ -Wall -o lambda lambda.cc Vector2D.cc -std=c++11
+c++ -Wall -o stdfun stdfun.cc Vector2D.cc -std=c++11
+c++ -Wall -o vbound vbound.cc
+c++ -Wall -o pbound pbound.cc

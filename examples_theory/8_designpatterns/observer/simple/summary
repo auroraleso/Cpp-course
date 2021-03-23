@@ -1,0 +1,14 @@
+SimpleDispatcher.h,hpp  :  a simple template dispatcher
+SimpleObserver.h,hpp    :  a simple template observer
+IntObserver.h,cc        :  an observer receiving int numbers and printing them
+IntPower.h,cc           :  an observer receiving int numbers and printing
+                           their n-th power
+obsList.cc              :  a chunk of code creating 3 IntObserver objects
+func.cc                 :  a function creating 2 IntPower objects
+observerTest.cc         :  a test program sending 10 int numbers
+
+
+to compile:
+c++ -Wall -o observerTest observerTest.cc \
+  IntObserver.cc obsList.cc \
+  IntPower.cc func.cc

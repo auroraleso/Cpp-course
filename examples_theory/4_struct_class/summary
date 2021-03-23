@@ -1,0 +1,16 @@
+struct.cc     :  a struct describing a 2d point
+strc11.cc     :  C++11: a struct describing a 2d point
+
+to compile:
+c++ -Wall -o struct struct.cc
+c++ -Wall -o strc11 strc11.cc -std=c++11
+
+simple   :  2 classes describing a 2d point and a 2d line
+cmuta    :  same class with "const" and "mutable" members
+cross    :  same classes calling each other
+friend   :  same classes calling each other, with "friend" specifier
+
+opera    :  operators with a class describing a 2D vector
+
+except   :  exception handling
+

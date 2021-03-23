@@ -1,0 +1,8 @@
+Point.h
+Point.cc
+Line.h
+Line.cc
+testLine.cc   :  a class describing a 2d line built from 2 points
+
+to compile:
+c++ -Wall -o testLine  testLine.cc  Point.cc Line.cc

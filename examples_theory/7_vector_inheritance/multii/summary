@@ -1,0 +1,16 @@
+Base.h
+Base.cc            :  a very simple class
+IntermediateA.h
+IntermediateA.cc
+IntermediateB.h
+IntermediateB.cc   :  two classes derived from Base
+Derived.h
+Derived.cc         :  a class derived from IntermediateA and IntermediateB
+
+multipleInheritance.cc : create the classes, call the function and 
+                         print the pointers
+
+to compile:
+c++ -Wall -o multipleInheritance multipleInheritance.cc \
+             Base.cc IntermediateA.cc IntermediateB.cc Derived.cc
+

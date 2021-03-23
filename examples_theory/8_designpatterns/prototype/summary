@@ -1,0 +1,17 @@
+Shape.h,cc
+Triangle.h,cc
+Square.h,cc
+Rectangle.h,cc
+Hexagon.h,cc
+ShapeFactory.h,cc
+testShapeFactory.cc  : geometric shapes with a common interface
+
+to compile:
+
+c++ -Wall -fPIC -shared -o libShapeFactory.so \
+    Shape.cc ShapeFactory.cc
+c++ -Wall -fPIC -o testShapeFactory1 testShapeFactory.cc \
+    Triangle.cc Rectangle.cc           -L. -lShapeFactory -ldl
+c++ -Wall -fPIC -o testShapeFactory2 testShapeFactory.cc \
+    Triangle.cc Rectangle.cc Square.cc -L. -lShapeFactory -ldl
+c++ -Wall -fPIC -shared -o libHexagon.so Hexagon.cc -L. -lShapeFactory

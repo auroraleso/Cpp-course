@@ -1,0 +1,15 @@
+opmem  :  operator members
+opfun  :  operator functions
+ambig  :  ambiguous calls
+
+  in each:
+
+  Vector2D.h
+  Vector2D.cc
+  testVector2D.cc  :  a 2D vector with sum and multiplication by a number
+
+  to compile:
+  c++ -Wall -o testVector2D testVector2D.cc Vector2D.cc
+
+funct  :  functor
+op_io  :  i/o operator functions

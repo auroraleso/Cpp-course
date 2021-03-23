@@ -1,0 +1,72 @@
+io_int.cc  :  integer numbers in-out
+ioenum.cc  :  enumerations
+op_inc.cc  :  increment operators
+op_num.cc  :  numeric operations
+op_eap.cc  :  equality and assignment
+opcast.cc  :  type cast
+subfun.cc  :  function calls
+recfun.cc  :  recursive function
+ovfunc.cc  :  functions overloading
+argcom.cc  :  main functions parameters
+op_ptr.cc  :  operations with pointers
+op_arr.cc  :  operations with arrays
+iarray.cc  :  array initialization
+arrstr.cc  :  strings as character arrays
+rangea.cc  :  range for
+ptrarg.cc  :  function arguments by reference
+ptrret.cc  :  function returning pointer to a local variable (WRONG)
+arrdyn.cc  :  dynamic memory handling
+mleaks.cc  :  memory leak example
+dangle.cc  :  dangling reference example
+pcasts.cc  :  const casts and reinterpret casts
+apvoid.cc  :  array of pointers to void
+iofile.cc  :  in-out with files
+i_loop.cc  :  input in a loop
+ioform.cc  :  formatted output
+iofstd.cc  :  C-style formatted output
+iofstr.cc  :  in-out with strings
+linein.cc  :  input by line
+iobase.cc  :  basic output with write
+iofbin.cc  :  binary write
+iofbck.cc  :  binary read
+enumcl.cc  :  C++11: enum class objects
+autotd.cc  :  C++11: automatic type determination
+conste.cc  :  C++11: compile-time constants
+rangea.cc  :  C++11: loop over an array range
+
+to compile:
+c++ -Wall -o io_int io_int.cc
+c++ -Wall -o ioenum ioenum.cc
+c++ -Wall -o op_inc op_inc.cc
+c++ -Wall -o op_num op_num.cc
+c++ -Wall -o opcast opcast.cc
+c++ -Wall -o op_eap op_eap.cc
+c++ -Wall -o subfun subfun.cc
+c++ -Wall -o recfun recfun.cc
+c++ -Wall -o ovfunc ovfunc.cc
+c++ -Wall -o argcom argcom.cc
+c++ -Wall -o op_ptr op_ptr.cc
+c++ -Wall -o op_arr op_arr.cc
+c++ -Wall -o arrstr arrstr.cc
+c++ -Wall -o ptrarg ptrarg.cc
+c++ -Wall -o arrdyn arrdyn.cc
+c++ -Wall -o ptrret ptrret.cc
+c++ -Wall -o mleaks mleaks.cc
+c++ -Wall -o dangle dangle.cc
+c++ -Wall -o pcasts pcasts.cc
+c++ -Wall -o apvoid apvoid.cc
+c++ -Wall -o funptr funptr.cc
+c++ -Wall -o iofile iofile.cc
+c++ -Wall -o i_loop i_loop.cc
+c++ -Wall -o ioform ioform.cc
+c++ -Wall -o iofstd iofstd.cc
+c++ -Wall -o iofstr iofstr.cc
+c++ -Wall -o linein linein.cc
+c++ -Wall -o iobase iobase.cc
+c++ -Wall -o iofbin iofbin.cc
+c++ -Wall -o iofbck iofbck.cc
+c++ -Wall -o enumcl enumcl.cc -std=c++11
+c++ -Wall -o autotd autotd.cc -std=c++11
+c++ -Wall -o conste conste.cc -std=c++11
+c++ -Wall -o lambfp lambfp.cc -std=c++11
+c++ -Wall -o rangea rangea.cc -std=c++11

@@ -1,0 +1,9 @@
+Shape.h,cc
+Triangle.h,cc
+Square.h,cc
+Rectangle.h,cc
+testShape.cc    : geometric shapes with a common interface
+
+to compile:
+
+c++ -Wall -o testShape testShape.cc Shape.cc Triangle.cc Rectangle.cc Square.cc

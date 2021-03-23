@@ -1,0 +1,13 @@
+ofstream_proxy.h,cc  :  a proxy to an ofstream, to open the file 
+                        only at first writing
+testProxy.cc         :  a test program writing prime factors of numbers
+
+TFileProxy.h         :  a proxy to a TFile, to handle multiple access to
+                        the same ROOT file in the same run (in util/include)
+rootProxy.cc         :  a test program producing histograms of
+                        random numbers
+
+to compile:
+
+c++ -Wall -o testProxy testProxy.cc ofstream_proxy.cc
+c++ -Wall `root-config --cflags` -o rootProxy rootProxy.cc `root-config --libs`

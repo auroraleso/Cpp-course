@@ -1,0 +1,9 @@
+stcopy.cc  :  string copy and concatenate
+substr.cc  :  substring insertion and extraction
+strlcf.cc  :  string length and comparison
+
+to compile:
+
+c++ -Wall -o stcopy stcopy.cc
+c++ -Wall -o substr substr.cc
+c++ -Wall -o strlcf strlcf.cc

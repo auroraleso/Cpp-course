@@ -1,0 +1,9 @@
+test_set.cc  :  fill a set and look for its elements
+test_rev.cc  :  fill a set and look for its elements, with reverse order
+test_map.cc  :  fill a map and look for its elements
+
+To compile:
+
+c++ -Wall -o test_set test_set.cc
+c++ -Wall -o test_rev test_rev.cc
+c++ -Wall -o test_map test_map.cc

@@ -1,0 +1,13 @@
+LinkedList.h,hpp     :  linked list of generic objects
+testList.cc          :  main function to test the list
+
+RecursiveTree.h,hpp  :  recursive tree of associations key/content
+testTree.cc          :  main function to test the tree
+                        by counting the number of occurrences of
+                        characters in a file
+(alternative code in "altTree")
+
+to compile:
+
+c++ -Wall -o testList testList.cc
+c++ -Wall -o testTree testTree.cc

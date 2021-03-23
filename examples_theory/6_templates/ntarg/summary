@@ -1,0 +1,8 @@
+FixedSizeArray.h
+FixedSizeArray.hpp  :  fixed size array template
+testArrayPrint.cc   :  test main program
+
+to compile:
+
+c++ -Wall -o testArrayPrint testArrayPrint.cc
+

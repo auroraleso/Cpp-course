@@ -1,0 +1,20 @@
+Shape.h,cc       :  common interface for geometric shapes
+Triangle.h,cc
+Square.h,cc
+Rectangle.h,cc   :  concrete geometric shapes
+
+Operation.h,cc   :  common interface for operations on geometric shapes
+Area.h,cc
+Perimeter.h,cc   :  concrete operations
+
+func.cc          :  function to scan a list of geometric shapes 
+                    and apply a list of operation to each of them
+
+testShape.cc     :  main function to create shapes and operation
+                    and test them
+
+to compile:
+
+c++ -Wall -o testShape testShape.cc func.cc              \
+             Shape.cc Triangle.cc Rectangle.cc Square.cc \
+             Operation.cc Area.cc Perimeter.cc

@@ -1,0 +1,7 @@
+Array.h
+Array.hpp         : a simple array template
+spec.cc           : Array specialization for <int>
+testArraySpec.cc  : create, fill and print the array
+
+to compile:
+c++ -Wall -o testArraySpec  testArraySpec.cc spec.cc

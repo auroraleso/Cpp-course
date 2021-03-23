@@ -1,0 +1,11 @@
+simple  :  inheritance without polymorphism
+hidden  :  name hiding
+vfunct  :  virtual function call by pointer, reference or value
+vfcall  :  virtual function call inside the base class
+vdestr  :  virtual destructor
+cd_seq  :  base and derived object creation and destruction sequence
+pvfunc  :  pure virtual functions
+dtcast  :  dynamic cast
+multib  :  multiple inheritance
+multii  :  multiple inheritance with intermediate classes
+viinhe  :  virtual inheritance

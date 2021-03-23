@@ -1,0 +1,9 @@
+Array.h
+Array.hpp  : a simple array template
+
+testArray.cc      : create, fill and print the array
+testArrayPrint.cc : add a function to print the array
+
+to compile:
+c++ -Wall -o testArray      testArray.cc
+c++ -Wall -o testArrayPrint testArrayPrint.cc

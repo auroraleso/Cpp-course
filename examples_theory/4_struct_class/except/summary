@@ -1,0 +1,8 @@
+MathException.h
+MathException.cc      :  a class to be used as exception
+testMathException.cc  :  throw and catch an exception
+testMathNoExcept.cc   :  C++11: block exceptions
+
+to compile:
+c++ -Wall -o testMathException testMathException.cc MathException.cc
+c++ -Wall -o testMathNoExcept  testMathNoExcept.cc  MathException.cc -std=c++11

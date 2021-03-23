@@ -1,0 +1,4 @@
+rm -f librandom_root.so
+c++ -Wall -fPIC -shared -I .. `root-config --cflags` -o librootRandom.so RootRandom.cc `root-config --libs`
+cp librootRandom.so ..
+

@@ -1,0 +1,23 @@
+dumb : no copy protection
+safe : copy forbidden
+s_98 : copy forbidden c++98 version
+copy : copy implemented
+
+in each:
+
+FloatArray.h
+FloatArray.cc  : a simple array of float
+
+testFloatArray.cc      : create, fill and print the array
+testFloatArrayPrint.cc : add a function to print
+
+to compile:
+c++ -Wall -o testFloatArray      testFloatArray.cc      FloatArray.cc
+c++ -Wall -o testFloatArrayPrint testFloatArrayPrint.cc FloatArray.cc
+
+
+
+move  :  "move" constructor and assignment
+
+to compile
+c++ -Wall -o rvmove rvmove.cc FloatArray.cc
