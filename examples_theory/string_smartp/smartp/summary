@@ -1,9 +1,0 @@
-autop.cc    :  a smart pointer moving object ownership
-uniquep.cc  :  C++11: a non-copyable smart pointer
-sharedp.cc  :  C++11: a copyable smart pointer with shared property
-
-to compile:
-
-c++ -Wall -o autop autop.cc -std=c++03
-c++ -Wall -o uniquep uniquep.cc -std=c++11
-c++ -Wall -o sharedp sharedp.cc -std=c++11
